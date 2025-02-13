@@ -1,4 +1,4 @@
 <h1>DC Hero Details</h1>
-@if (hero$ | async; as hero) {
+@if (hero$() | async; as hero) {
   <app-hero-item [hero]="hero"></app-hero-item>
 }
