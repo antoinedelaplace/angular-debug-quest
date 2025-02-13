@@ -1,3 +1,5 @@
+import { Hero } from './hero.model';
+
 export class HeroWithFavorite {
   id: number;
   name: string;
@@ -7,7 +9,7 @@ export class HeroWithFavorite {
   firstAppearance: string;
   powers: string[];
 
-  constructor(hero: HeroWithFavorite) {
+  constructor(hero: Hero) {
     this.id = hero.id;
     this.name = hero.name;
     this.isFavorite = false;
@@ -18,7 +20,6 @@ export class HeroWithFavorite {
   }
 
   toggleFavorite(): void {
-    console.log('toggleFavorite', this.isFavorite);
     this.isFavorite = !this.isFavorite;
   }
 }

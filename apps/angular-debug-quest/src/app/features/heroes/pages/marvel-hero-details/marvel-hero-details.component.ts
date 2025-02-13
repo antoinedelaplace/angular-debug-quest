@@ -1,4 +1,4 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core';
 import { HeroItemComponent } from '../../components/hero-item.component';
 import { HeroService } from '../../services/hero.service';
 import { AsyncPipe } from '@angular/common';
@@ -11,6 +11,8 @@ import { AsyncPipe } from '@angular/common';
 export class MarvelHeroDetailsComponent {
   heroService = inject(HeroService);
 
-  marvelId = input<string>();
-  hero$ = this.heroService.getHeroById(this.marvelId()!);
+  marvelId = input.required<string>();
+  hero$ = computed(() => {
+    return this.heroService.getHeroById(this.marvelId());
+  });
 }

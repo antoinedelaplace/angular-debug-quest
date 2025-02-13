@@ -16,8 +16,14 @@ export class HeroService {
     return this.http.get<Hero[]>(this.apiUrl);
   }
 
-  getHeroesWithFavorite(): Observable<HeroWithFavorite[]> {
-    return this.http.get<HeroWithFavorite[]>(this.apiUrl);
+  getMarvelHeroesWithFavorite(): Observable<HeroWithFavorite[]> {
+    return this.getHeroes().pipe(
+      map(heroes =>
+        heroes
+          .filter(hero => hero.publisher === 'Marvel Comics')
+          .map(hero => new HeroWithFavorite(hero))
+      )
+    );
   }
 
   getHeroById(id: string): Observable<Hero> {

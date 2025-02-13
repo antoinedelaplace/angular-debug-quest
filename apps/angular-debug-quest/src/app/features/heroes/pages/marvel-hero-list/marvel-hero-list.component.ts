@@ -15,7 +15,7 @@ export class MarvelHeroListComponent implements OnInit {
   constructor(private heroService: HeroService) {}
 
   ngOnInit(): void {
-    this.heroService.getHeroesWithFavorite().subscribe(heroes => {
+    this.heroService.getMarvelHeroesWithFavorite().subscribe(heroes => {
       this.heroes = heroes;
     });
   }
