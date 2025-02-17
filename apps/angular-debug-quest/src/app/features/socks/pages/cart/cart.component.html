@@ -6,7 +6,7 @@
     </a>
   </div>
 
-  @if (cartService.cart().length) {
+  @if (cartService.totalItems()) {
     <div class="bg-white rounded-lg shadow-md">
       @for (item of cartService.cart(); track item.sock.id) {
         <div class="flex items-center p-6 border-b">

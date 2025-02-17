@@ -10,7 +10,6 @@ import { rxResource } from '@angular/core/rxjs-interop';
   selector: 'app-socks-list',
   standalone: true,
   imports: [RouterLink, CurrencyPipe],
-  providers: [CartService],
   templateUrl: './socks-list.component.html',
 })
 export class SocksListComponent {

@@ -7,7 +7,6 @@ import { CurrencyPipe } from '@angular/common';
   selector: 'app-cart',
   standalone: true,
   imports: [RouterLink, CurrencyPipe],
-  providers: [CartService],
   templateUrl: './cart.component.html',
 })
 export class CartComponent {
