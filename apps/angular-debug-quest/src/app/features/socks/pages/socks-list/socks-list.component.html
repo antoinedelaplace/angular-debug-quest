@@ -9,7 +9,7 @@
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    @if (isLoading) {
+    @if (socksResource.isLoading()) {
       <div class="col-span-full">
         <div class="flex justify-center items-center h-48">
           <div
@@ -17,7 +17,7 @@
         </div>
       </div>
     } @else {
-      @for (sock of socks; track sock.id) {
+      @for (sock of socksResource.value(); track sock.id) {
         <div class="border rounded-lg p-4 shadow-sm">
           <img
             [src]="sock.imageUrl"

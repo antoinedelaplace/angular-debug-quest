@@ -21,9 +21,6 @@ export class SocksListComponent {
     loader: () => this.socksService.getSocks(),
   });
 
-  socks = this.socksResource.value();
-  isLoading = this.socksResource.isLoading();
-
   addToCart(sock: Sock): void {
     this.cartService.addToCart(sock);
   }
