@@ -28,7 +28,7 @@ export class AppComponent {
     lastName: ['', [Validators.required, Validators.minLength(2)]],
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(8)]],
-    acceptTerms: [false, Validators.required],
+    acceptTerms: [false, Validators.requiredTrue],
   });
 
   onSubmit(): void {
