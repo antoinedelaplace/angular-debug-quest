@@ -1,5 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { AuthService } from './auth.service';
 
@@ -18,8 +23,8 @@ export class AuthComponent {
   authService = inject(AuthService);
 
   loginForm: FormGroup<LoginForm> = this.fb.nonNullable.group({
-    username: 'angularisbest',
-    password: 'angularisbest',
+    username: ['angularisbest', Validators.required],
+    password: ['angularisbest', Validators.required],
   });
 
   onSubmit(): void {
